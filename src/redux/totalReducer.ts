@@ -1,4 +1,4 @@
-import { createSlice, AnyAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 type TotalCount = {
   [total: string]: number;

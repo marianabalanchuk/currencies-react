@@ -1,9 +1,9 @@
 import CurrenciesArray, { Currency } from "./CurrenciesArray";
 
-const getCurrencyRateHelper = (code: number) => {
+const getCurrencyRateHelper = (name: string) => {
   let currency: Currency = CurrenciesArray[0];
   currency =
-    CurrenciesArray.find((element) => element.currency === code) ??
+    CurrenciesArray.find((element) => element.currency === name) ??
     CurrenciesArray[0];
 
   return currency.rate;

@@ -1,8 +1,7 @@
 import CurrencyConstants from "./CurrencyConstants";
 
 export type Currency = {
-  currencyA?: number;
-  currency: number;
+  currency: string;
   rate: number;
 };
 

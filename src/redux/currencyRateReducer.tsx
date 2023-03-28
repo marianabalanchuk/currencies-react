@@ -1,15 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-import CurrencyConstants from "../utilts/CurrencyConstants";
-import CurrencyRateHelper from "../utilts/CurrencyRateHelper";
+import CurrencyConstants from "utils/CurrencyConstants";
+import getCurrencyRateHelper from "utils/CurrencyRateHelper";
+import CurrencyRateHelper from "utils/CurrencyRateHelper";
 
 type CurrencyRate = {
-  rate: number;
   name: string;
+  rate: number;
 };
 
 export const initialState: CurrencyRate = {
   rate: CurrencyRateHelper(CurrencyConstants.UAH),
-  name: CurrencyConstants.UAH.toString(),
+  name: CurrencyConstants.UAH,
 };
 
 export const currencyRate = createSlice({
@@ -18,7 +19,8 @@ export const currencyRate = createSlice({
   reducers: {
     setRate: (state, action) => ({
       ...state,
-      rate: action.payload,
+      rate: getCurrencyRateHelper(action.payload),
+      name: action.payload,
     }),
   },
 });
